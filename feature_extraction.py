@@ -72,7 +72,7 @@ class W2V:
         else:
             self.args = args
             # Instantiate model
-            self.model_w2v = Word2Vec(min_count=10, window=5, size=W2V_SIZE, sample=1e-3, negative=5,
+            self.model_w2v = Word2Vec(min_count=10, window=5, vector_size=W2V_SIZE, sample=1e-3, negative=5,
                             workers=self.args.workers, sg=self.args.sg, seed=3778)
 
 

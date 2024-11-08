@@ -72,6 +72,11 @@ class MIMIC_Dataset:
             train_ids = utils.load_list_from_txt(f'{DATA_DIR}train_full_hadm_ids.csv')
             val_ids = utils.load_list_from_txt(f'{DATA_DIR}dev_full_hadm_ids.csv')
             test_ids = utils.load_list_from_txt(f'{DATA_DIR}test_full_hadm_ids.csv')
+            
+            # Convert HADM_IDs in train, val, and test to integers
+            train_ids = [int(hadm_id) for hadm_id in train_ids]
+            val_ids = [int(hadm_id) for hadm_id in val_ids]
+            test_ids = [int(hadm_id) for hadm_id in test_ids]
 
             hadm_ids = [train_ids, val_ids, test_ids]
     
